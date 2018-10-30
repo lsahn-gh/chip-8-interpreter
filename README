@@ -1,0 +1,24 @@
+Chip 8 Interpreter
+------------------
+See http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#1.0
+
+
+Install
+-------
+$ git clone https://github.com/yisooan/chip-8-interpreter.git
+$ cd chip-8-interpreter
+$ make
+
+
+About "elif"
+------------
+There is a user-defined macro that is not defined in C standard although C compiler completely compile all the code with C99 standard. It is "elif". If you have experienced with Python, you may know it. However, I added and used it for not being frustrated repeating "else if" again and again, and fun a bit. One more thing is that in Turkey, capitalized "Elif" is a common girls' name[1]. Of course, I know this is the way against coding standard, but I DO NOT do this in industry. For your information, this is my side project. Just have fun!
+
+[1]: https://en.wikipedia.org/wiki/Elif
+
+
+References
+----------
+- CHIP-8 Wikipedia :: https://en.wikipedia.org/w/index.php?title=CHIP-8
+- Cowgod's Chip-8 Technical Reference :: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
+- How to write an emulator (CHIP-8 interpreter) :: http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/
