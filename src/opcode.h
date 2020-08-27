@@ -5,6 +5,7 @@
 
 #define IS_COND(_EXPR)          ((_EXPR) ? true : false)
 #define AND_0x000F(_OPCODE)     (_OPCODE & 0x000F)
+#define AND_0xF000(_OPCODE)     (_OPCODE & 0xF000)
 #define AND_0xF00F(_OPCODE)     (_OPCODE & 0xF00F)
 #define AND_0xF0FF(_OPCODE)     (_OPCODE & 0xF0FF)
 #define AND_0xFFF0(_OPCODE)     (_OPCODE & 0xFFF0)
