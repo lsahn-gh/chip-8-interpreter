@@ -27,11 +27,13 @@ typedef struct _Chip8
 {
     ubyte       gfx[SCREEN];
     ubyte       memory[MEM_SIZE];
+
+    /* registers */
     ubyte       V[REGISTERS];
+    ushort      I;
 
     ushort      opcode;
     ushort      pc;
-    ushort      i;
     ubyte       delay_timer;
     ubyte       sound_timer;
 

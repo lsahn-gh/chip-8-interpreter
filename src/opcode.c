@@ -216,7 +216,7 @@ _decode_opcode (Chip8 *vm)
     elif (IS_Annn (opcode))
     {
         ushort nnn = (opcode & 0x0FFF);
-        vm->i = nnn;
+        vm->I = nnn;
     }
 
     /* Jump to location nnn + V0 */
@@ -257,7 +257,7 @@ _decode_opcode (Chip8 *vm)
         ubyte pos_x = vm->V[vx];
         ubyte pos_y = vm->V[vy];
 
-        ushort addr = vm->memory[vm->i];
+        ushort addr = vm->memory[vm->I];
 
         /* TODO implement the rest of code */
 
@@ -320,7 +320,7 @@ _decode_opcode (Chip8 *vm)
     {
         Register vx = GET_V (opcode, R8);
 
-        vm->i += vm->V[vx];
+        vm->I += vm->V[vx];
     }
 
     /* Set I = location of sprite for digit Vx */
@@ -343,7 +343,7 @@ _decode_opcode (Chip8 *vm)
     elif (IS_Fx55 (opcode))
     {
         Register vx = GET_V (opcode, R8);
-        ubyte * dst = (vm->memory + vm->i);
+        ubyte * dst = (vm->memory + vm->I);
         ubyte * src = vm->V;
 
         if ( !copy_fast (dst, src, vx + 1) )
@@ -355,7 +355,7 @@ _decode_opcode (Chip8 *vm)
     {
         Register vx = GET_V (opcode, R8);
         ubyte * dst = vm->V;
-        ubyte * src = (vm->memory + vm->i);
+        ubyte * src = (vm->memory + vm->I);
 
         if ( !copy_fast (dst, src, vx + 1) )
             die_at_line ("Failed to copy the memory to the registers");
