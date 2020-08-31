@@ -13,7 +13,12 @@ _decode_opcode (Chip8 *vm)
 
     if (IS_0nnn (opcode))
     {
-
+        /* XXX: only used on the old computers
+         * which chip-8 was originally implemented.
+         *
+         * Same as 1nnn op? who knows. */
+        ushort location = opcode & 0x0FFF;
+        vm->pc = location;
     }
 
     /* Clear the display */
